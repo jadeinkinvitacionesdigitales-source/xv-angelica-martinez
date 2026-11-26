@@ -16,5 +16,5 @@ window.INVITACION = {
   // WhatsApp para confirmar (código de país + número, sin espacios ni +)
   whatsapp: "50761648456",
   // URL de la hoja de Google (Apps Script, termina en /exec). Vacía = confirmaciones por WhatsApp.
-  scriptUrl: "https://script.google.com/macros/s/AKfycbwUb0dnlJFCMfrSxCRJjeute8kXG8bUX0gf7aV7THjrXBkLGciFwfQ0KxaPt9Q_Q2cacQ/exec"
+  scriptUrl: "https://script.google.com/macros/s/AKfycbw82wL-U-MHp6Bj1chtWDVTd668k_OMzLRaqc5DdHybVxEWn9IUGbyMfOeN6qzWDtnF/exec"
 };
