@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel · XV Angelica Martínez</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="config.js?v=3"></script>
+<style>
+:root{--navy:#1d1a6b;--noche:#0d1033;--oro:#b08a3e;--oro-c:#f3d48c;--rojo:#8b0f1a;--crema:#fbf3e4;--tinta:#2a2340;--verde:#2f6b3f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;color:var(--tinta);min-height:100vh;
+  background:linear-gradient(rgba(13,16,51,.82),rgba(13,16,51,.92)),url(img/salon.jpg) center/cover fixed}
+.app{max-width:560px;margin:0 auto;padding:22px 16px 60px}
+header{text-align:center;color:var(--oro-c);margin-bottom:18px}
+header small{font-family:"Cinzel";letter-spacing:.3em;font-size:12px;opacity:.85}
+header h1{font-family:"Cinzel";font-size:26px;margin-top:4px;letter-spacing:.04em}
+.card{background:var(--crema);border-radius:16px;padding:20px 18px;margin-bottom:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);border:1px solid rgba(176,138,62,.5)}
+.card h2{font-family:"Cinzel";color:var(--navy);font-size:17px;letter-spacing:.06em;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.puestos{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 14px}
+.puestos button{width:48px;height:48px;border-radius:50%;border:1px solid var(--oro);background:#fff;font-size:26px;color:var(--navy);cursor:pointer}
+.puestos b{font-family:"Cinzel";font-size:46px;color:var(--rojo);min-width:70px;text-align:center;line-height:1}
+.puestos span{display:block;text-align:center;font-size:15px;color:#6b5a7d}
+.rapidos{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px}
+.rapidos button{border:1px solid rgba(176,138,62,.6);background:#fff;border-radius:20px;padding:5px 13px;font:inherit;font-size:16px;cursor:pointer;color:var(--tinta)}
+.rapidos button.on{background:linear-gradient(135deg,#f6e3a8,#c79b45);border-color:var(--oro);font-weight:700}
+.enlace{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:#fff;border:1px dashed var(--oro);border-radius:10px;padding:10px;word-break:break-all;margin-bottom:12px;color:#3b3352}
+.acciones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:"Cinzel";font-weight:600;font-size:13px;letter-spacing:.06em;
+  padding:11px 8px;border-radius:12px;border:0;cursor:pointer;text-decoration:none;color:#3a2805;background:linear-gradient(135deg,#f6e3a8,#c79b45 55%,#e9c372)}
+.btn.wa{background:#25d366;color:#fff}
+.btn.sec{background:#fff;border:1px solid var(--oro)}
+.btn.mini{padding:7px 12px;font-size:12px}
+.resumen{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.resumen div{background:#fff;border-radius:12px;padding:10px 4px;border:1px solid rgba(176,138,62,.35)}
+.resumen b{display:block;font-family:"Cinzel";font-size:26px;color:var(--navy);line-height:1.1}
+.resumen .si b{color:var(--verde)}.resumen .no b{color:var(--rojo)}
+.resumen small{font-size:13px;color:#6b5a7d;line-height:1.1;display:block}
+.pestanas{display:flex;gap:6px;margin-bottom:10px}
+.pestanas button{flex:1;border:1px solid rgba(176,138,62,.6);background:#fff;border-radius:10px;padding:8px;font:inherit;font-size:16px;font-weight:600;cursor:pointer;color:var(--tinta)}
+.pestanas button.on{background:var(--navy);color:var(--oro-c);border-color:var(--navy)}
+.lista{display:flex;flex-direction:column;gap:8px}
+.item{background:#fff;border-radius:12px;padding:10px 12px;border-left:4px solid var(--verde);display:flex;justify-content:space-between;gap:10px}
+.item.no{border-left-color:var(--rojo)}
+.item.cancion{border-left-color:var(--oro)}
+.item .nom{font-weight:700;font-size:19px;line-height:1.2}
+.item .det{font-size:15px;color:#6b5a7d}
+.item .msg{font-size:16px;font-style:italic;color:#3b3352;margin-top:3px}
+.item .num{font-family:"Cinzel";font-weight:700;font-size:22px;color:var(--verde);white-space:nowrap;text-align:right}
+.item.no .num{color:var(--rojo);font-size:14px}
+.vacio{text-align:center;color:#6b5a7d;font-style:italic;padding:10px}
+.buscar{width:100%;font:inherit;font-size:17px;padding:8px 12px;border:1px solid rgba(176,138,62,.55);border-radius:10px;margin-bottom:10px;background:#fff}
+.aviso{background:#fff7e0;border:1px solid var(--oro);border-radius:12px;padding:14px;font-size:17px;line-height:1.45}
+.aviso ol{margin:8px 0 0 20px}
+.estado{font-size:14px;color:#6b5a7d;text-align:center;margin-top:8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--oro-c);padding:10px 18px;border-radius:24px;font-family:"Cinzel";font-size:13px;transition:.3s;opacity:0}
+.toast.ver{transform:translateX(-50%);opacity:1}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <small>PANEL · MIS XV AÑOS</small>
+    <h1 id="titulo">Angelica Martínez</h1>
+  </header>
+
+  <!-- ENLACES POR PUESTOS -->
+  <section class="card">
+    <h2>Crear enlace</h2>
+    <div class="puestos">
+      <button id="menos" aria-label="Menos puestos">−</button>
+      <div><b id="num">2</b><span id="lblNum">puestos</span></div>
+      <button id="mas" aria-label="Más puestos">+</button>
+    </div>
+    <div class="rapidos" id="rapidos"></div>
+    <div class="enlace" id="enlace"></div>
+    <div class="acciones">
+      <button class="btn" id="copiar">Copiar</button>
+      <a class="btn wa" id="compartir" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn sec" id="ver" target="_blank" rel="noopener">Ver</a>
+    </div>
+  </section>
+
+  <!-- RESUMEN -->
+  <section class="card">
+    <h2>Respuestas <button class="btn mini sec" id="actualizar">↻ Actualizar</button></h2>
+    <div id="sinConexion" class="aviso" hidden></div>
+    <div id="conDatos" hidden>
+      <div class="resumen">
+        <div class="si"><b id="rPersonas">0</b><small>personas confirmadas</small></div>
+        <div class="si"><b id="rSi">0</b><small>respuestas<br>sí</small></div>
+        <div class="no"><b id="rNo">0</b><small>no asistirán</small></div>
+        <div><b id="rCanc">0</b><small>canciones</small></div>
+      </div>
+      <p class="estado" id="estado"></p>
+    </div>
+  </section>
+
+  <!-- CONFIRMACIONES -->
+  <section class="card" id="cardRsvp" hidden>
+    <h2>Confirmaciones</h2>
+    <div class="pestanas">
+      <button class="on" data-f="si">Asistirán</button>
+      <button data-f="no">No asistirán</button>
+      <button data-f="todos">Todas</button>
+    </div>
+    <input class="buscar" id="buscar" placeholder="Buscar por nombre…">
+    <div class="lista" id="listaRsvp"></div>
+  </section>
+
+  <!-- CANCIONES -->
+  <section class="card" id="cardCanc" hidden>
+    <h2>Canciones sugeridas <button class="btn mini sec" id="copiarCanc">Copiar lista</button></h2>
+    <div class="lista" id="listaCanc"></div>
+  </section>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  const C = window.INVITACION || {};
+  const q = s => document.querySelector(s);
+  const BASE = location.href.replace(/panel\.html.*$/,"").replace(/[?#].*$/,"");
+  const SCRIPT = String(C.scriptUrl||"").trim();
+  const nombre1 = (C.nombre||"").split(" ")[0];
+  q("#titulo").textContent = C.nombre || "";
+  const esc = t => String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  function toast(t){ const el=q("#toast"); el.textContent=t; el.classList.add("ver"); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove("ver"),1800); }
+  async function copiar(t){ try{ await navigator.clipboard.writeText(t); }catch(e){ const a=document.createElement("textarea"); a.value=t; document.body.appendChild(a); a.select(); document.execCommand("copy"); a.remove(); } toast("¡Copiado!"); }
+
+  // ---------- enlaces por puestos ----------
+  let n = 2;
+  const rap = q("#rapidos");
+  for(let i=1;i<=6;i++){ const b=document.createElement("button"); b.textContent=i; b.onclick=()=>poner(i); rap.appendChild(b); }
+  function enlace(){ return BASE+"?p="+n; }
+  function poner(v){
+    n=Math.max(1,Math.min(20,v));
+    q("#num").textContent=n; q("#lblNum").textContent=n===1?"puesto":"puestos";
+    [...rap.children].forEach((b,i)=>b.classList.toggle("on",i+1===n));
+    const url=enlace();
+    q("#enlace").textContent=url; q("#ver").href=url;
+    const msg="✨ Estás invitado a mis XV años ✨\n"+(C.nombre||"")+"\n"+(C.diaSemana||"")+" "+(C.dia||"")+" de "+String(C.mes||"").toLowerCase()+" · "+(C.hora||"")+"\nTienes "+n+(n===1?" puesto reservado":" puestos reservados")+".\nAbre tu invitación aquí 👇\n"+url;
+    q("#compartir").href="https://wa.me/?text="+encodeURIComponent(msg);
+  }
+  q("#menos").onclick=()=>poner(n-1); q("#mas").onclick=()=>poner(n+1);
+  q("#copiar").onclick=()=>copiar(enlace());
+  poner(2);
+
+  // ---------- respuestas ----------
+  let datos={rsvps:[],canciones:[]}, filtro="si";
+  const fecha = iso => { const d=new Date(iso); return isNaN(d)?"":d.toLocaleDateString("es",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("es",{hour:"numeric",minute:"2-digit"}); };
+
+  function sinConexion(html){ q("#sinConexion").innerHTML=html; q("#sinConexion").hidden=false; q("#conDatos").hidden=true; q("#cardRsvp").hidden=true; q("#cardCanc").hidden=true; }
+
+  async function cargar(){
+    if(!SCRIPT){
+      sinConexion('<b>Las respuestas aún no están conectadas.</b> Mientras tanto, las confirmaciones y canciones llegan por WhatsApp.<ol>'+
+        '<li>Crea una hoja en <b>sheets.google.com</b> → Extensiones → Apps Script.</li>'+
+        '<li>Pega el archivo <b>Code.gs</b> y cambia <b>CLAVE_PANEL</b> por una clave tuya.</li>'+
+        '<li>Implementar → Nueva implementación → Aplicación web · Ejecutar como: Yo · Acceso: Cualquier persona.</li>'+
+        '<li>Envía la URL que termina en <b>/exec</b> para conectarla.</li></ol>');
+      return;
+    }
+    let clave = localStorage.getItem("panelClaveAngelica");
+    if(!clave){ clave = prompt("Escribe la clave del panel:"); if(!clave) return sinConexion("Escribe la clave del panel para ver las respuestas. Toca «Actualizar»."); localStorage.setItem("panelClaveAngelica",clave); }
+    q("#estado").textContent="Cargando…"; q("#conDatos").hidden=false; q("#sinConexion").hidden=true;
+    try{
+      const u=new URL(SCRIPT); u.searchParams.set("action","list"); u.searchParams.set("key",clave); u.searchParams.set("t",Date.now());
+      const j=await (await fetch(u.href)).json();
+      if(!j.ok){ if(j.error==="clave"){ localStorage.removeItem("panelClaveAngelica"); return sinConexion("La clave no es correcta. Toca «Actualizar» para escribirla de nuevo."); } throw new Error(j.error); }
+      datos={rsvps:j.rsvps||[],canciones:j.canciones||[]};
+      pintar(); q("#estado").textContent="Actualizado "+new Date().toLocaleTimeString("es",{hour:"numeric",minute:"2-digit"});
+    }catch(e){ sinConexion("No se pudieron cargar las respuestas. Revisa tu conexión y toca «Actualizar»."); }
+  }
+
+  function pintar(){
+    const R=datos.rsvps, si=R.filter(r=>r.asiste==="si"), no=R.filter(r=>r.asiste!=="si");
+    q("#rPersonas").textContent=si.reduce((a,r)=>a+(Number(r.personas)||0),0);
+    q("#rSi").textContent=si.length; q("#rNo").textContent=no.length; q("#rCanc").textContent=datos.canciones.length;
+    q("#cardRsvp").hidden=false; q("#cardCanc").hidden=false;
+    const b=q("#buscar").value.trim().toLowerCase();
+    const lista=(filtro==="si"?si:filtro==="no"?no:R).filter(r=>!b||String(r.nombre).toLowerCase().includes(b))
+      .sort((x,y)=>String(y.fecha).localeCompare(String(x.fecha)));
+    q("#listaRsvp").innerHTML = lista.length ? lista.map(r=>{
+      const ok=r.asiste==="si";
+      return '<div class="item'+(ok?"":" no")+'"><div><div class="nom">'+esc(r.nombre)+'</div><div class="det">'+fecha(r.fecha)+(r.puestos?' · enlace de '+esc(r.puestos)+' puestos':'')+'</div>'+
+        (r.mensaje?'<div class="msg">“'+esc(r.mensaje)+'”</div>':'')+'</div><div class="num">'+(ok?esc(r.personas)+'<div class="det">'+(Number(r.personas)===1?'persona':'personas')+'</div>':'No asistirá')+'</div></div>';
+    }).join("") : '<p class="vacio">Todavía no hay respuestas aquí.</p>';
+    const Cn=[...datos.canciones].sort((x,y)=>String(y.fecha).localeCompare(String(x.fecha)));
+    q("#listaCanc").innerHTML = Cn.length ? Cn.map(c=>'<div class="item cancion"><div><div class="nom">'+esc(c.cancion)+'</div><div class="det">'+(c.artista?esc(c.artista)+' · ':'')+(c.nombre?'sugerida por '+esc(c.nombre):'')+'</div></div></div>').join("") : '<p class="vacio">Todavía no hay canciones sugeridas.</p>';
+  }
+  document.querySelectorAll(".pestanas button").forEach(b=>b.onclick=()=>{ filtro=b.dataset.f; document.querySelectorAll(".pestanas button").forEach(x=>x.classList.toggle("on",x===b)); pintar(); });
+  q("#buscar").oninput=pintar;
+  q("#actualizar").onclick=cargar;
+  q("#copiarCanc").onclick=()=>copiar(datos.canciones.map((c,i)=>(i+1)+". "+c.cancion+(c.artista?" – "+c.artista:"")).join("\n"));
+  cargar();
+})();
+</script>
+</body>
+</html>
