@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-<script src="config.js"></script>
+<script src="config.js?v=3"></script>
 <style>
 :root{
   --navy:#1d1a6b; --noche:#0d1033; --oro:#b08a3e; --oro-claro:#e9cf8a; --oro-osc:#684b08;
@@ -174,7 +174,7 @@ section{position:relative;padding:46px 22px;text-align:center}
 
 /* vestimenta */
 .v-tipo{top:59.6%;font-family:"Cinzel";font-weight:700;font-size:6.4cqw;letter-spacing:.2em;color:var(--navy)}
-.v-txt{top:67.5%;font-size:4.2cqw;font-style:italic;color:#4a3d63;line-height:1.3}
+.v-txt{top:66.6%;font-size:4cqw;font-style:italic;color:#4a3d63;line-height:1.3}
 
 /* pase */
 #pase{display:none}
@@ -206,6 +206,23 @@ footer{text-align:center;font-size:14px;padding:24px 10px 90px;color:#6b5a7d;let
 .rv.visto{opacity:1;transform:none;filter:none}
 .d1{transition-delay:.15s!important}.d2{transition-delay:.3s!important}.d3{transition-delay:.45s!important}.d4{transition-delay:.6s!important}
 
+
+.v-txt .reservado{display:block;margin-top:2.2cqw;font-style:normal;font-weight:600;font-size:3.5cqw;color:var(--rojo);line-height:1.25}
+.sobre-ico{width:70px;margin:0 auto 10px;display:block;animation:flotar 4s ease-in-out infinite}
+/* formularios */
+.formu{margin-top:18px;display:flex;flex-direction:column;gap:10px;align-items:stretch;text-align:left}
+.formu input:not([type=radio]),.formu select,.formu textarea{font:inherit;font-size:18px;color:var(--tinta);width:100%;padding:11px 14px;
+  border:1px solid rgba(176,138,62,.55);border-radius:10px;background:rgba(255,255,255,.85);outline:none}
+.formu input:focus,.formu select:focus,.formu textarea:focus{border-color:var(--oro);box-shadow:0 0 0 3px rgba(176,138,62,.2)}
+.formu .btn{align-self:center;margin-top:6px}
+.opciones{display:flex;gap:8px}
+.opciones label{flex:1;cursor:pointer;position:relative}
+.opciones input{position:absolute;opacity:0;pointer-events:none}
+.opciones span{display:block;text-align:center;padding:10px 6px;border:1px solid rgba(176,138,62,.55);border-radius:10px;font-size:17px;font-weight:600;color:#5a4a6e;background:rgba(255,255,255,.7);transition:.25s}
+.opciones input:checked+span{background:linear-gradient(135deg,#f6e3a8,#c79b45);color:#3a2805;border-color:#b08a3e}
+.cuantos{display:flex;flex-direction:column;gap:6px;font-size:17px;color:#4a3d63}
+.aviso{text-align:center;font-size:17px;min-height:1em;color:var(--navy)}
+.aviso.error{color:var(--rojo)}
 /* ---------- bandas con fondos grandes y transiciones suaves ---------- */
 body{background:#0d1033 url(img/salon.jpg) center/cover fixed}
 .pagina{background:#0d1033}
@@ -312,9 +329,9 @@ footer{color:#cbb98a;background:#0d1033;padding-top:20px}
       <div class="guion rv sube d1">Érase una vez…</div>
       <svg class="adorno" viewBox="0 0 220 22"><path d="M0 11h85M135 11h85" stroke="#b08a3e" stroke-width="1"/><path d="M110 2l9 9-9 9-9-9z" fill="none" stroke="#b08a3e"/><circle cx="110" cy="11" r="2.5" fill="#8b0f1a"/></svg>
       <p class="texto rv sube d2">una joven que soñaba con un baile en un castillo encantado, donde una rosa guardaba la magia de un amor verdadero. Hoy ese sueño se hace realidad.</p>
-      <p class="texto rv sube d3" style="margin-top:14px">Con la bendición de Dios y junto a</p>
+      <p class="texto rv sube d3" style="margin-top:14px">Con la bendición de Dios y su madre</p>
       <div class="anfitrion rv zoom d3" data-campo="anfitriones">Laura Martínez</div>
-      <p class="texto rv sube d4">tengo el honor de invitarte a celebrar mis XV años.</p>
+      <p class="texto rv sube d4">tienen el honor de invitarte a celebrar sus XV años.</p>
     </div>
   </section>
 
@@ -355,7 +372,7 @@ footer{color:#cbb98a;background:#0d1033;padding-top:20px}
       <div class="capa u-tit rv sube d1">RECEPCIÓN</div>
       <div class="pin"></div>
       <div class="capa u-sal rv zoom d2" data-campo="salon">Salón Kahuama</div>
-      <div class="capa u-dir rv sube d3" data-campo="direccion">Calle 72 # 93-09, Barranquilla</div>
+      <div class="capa u-dir rv sube d3" data-campo="direccion">Calle 72 # 39-09, Barranquilla</div>
     </div>
     <div class="debajo rv sube">
       <a class="btn" id="btnMapa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Ver ubicación</a>
@@ -367,22 +384,31 @@ footer{color:#cbb98a;background:#0d1033;padding-top:20px}
     <div class="lamina rv voltea">
       <img src="img/vestimenta.jpg" alt="Código de vestimenta">
       <div class="capa v-tipo rv zoom d1" data-campo="vestimenta">ETIQUETA</div>
-      <div class="capa v-txt rv sube d2">Ellos de traje formal,<br>ellas de vestido largo</div>
+      <div class="capa v-txt rv sube d2">Ellos de traje formal,<br>ellas de vestido largo<span class="reservado">El rojo y el dorado están reservados<br>para la quinceañera</span></div>
     </div>
   </section>
 
 </div>
 
 <div class="banda salon"><div class="fondo"></div>
-  <!-- PASE PERSONAL (?n=Nombre&p=2) -->
+  <!-- PASE PERSONAL (?p=2) -->
   <section id="pase">
     <div class="pergamino rv zoom">
       <div class="titulo">Pase especial</div>
       <svg class="adorno" viewBox="0 0 220 22"><path d="M0 11h85M135 11h85" stroke="#b08a3e" stroke-width="1"/><path d="M110 2l9 9-9 9-9-9z" fill="none" stroke="#b08a3e"/><circle cx="110" cy="11" r="2.5" fill="#8b0f1a"/></svg>
-      <div class="guion" id="paseNombre"></div>
       <p class="texto" id="paseTexto"></p>
       <div class="pase-num" id="paseNum"></div>
       <p class="texto" id="paseLbl"></p>
+    </div>
+  </section>
+
+  <!-- LLUVIA DE SOBRES -->
+  <section>
+    <div class="pergamino rv zoom">
+      <svg class="sobre-ico" viewBox="0 0 64 48"><rect x="3" y="6" width="58" height="38" rx="4" fill="#fbf3e4" stroke="#b08a3e" stroke-width="2"/><path d="M4 8l28 21L60 8" fill="none" stroke="#b08a3e" stroke-width="2"/><circle cx="32" cy="29" r="7" fill="#8b0f1a"/><path d="M29 29.5l2 2 4-4.5" fill="none" stroke="#f3d48c" stroke-width="1.8"/></svg>
+      <div class="titulo rv sube d1">Lluvia de sobres</div>
+      <svg class="adorno" viewBox="0 0 220 22"><path d="M0 11h85M135 11h85" stroke="#b08a3e" stroke-width="1"/><path d="M110 2l9 9-9 9-9-9z" fill="none" stroke="#b08a3e"/><circle cx="110" cy="11" r="2.5" fill="#8b0f1a"/></svg>
+      <p class="texto rv sube d2">Tu presencia es el regalo más valioso. Si deseas tener un detalle conmigo, te agradeceré que sea en efectivo, dentro de un sobre, el día de la celebración.</p>
     </div>
   </section>
 
@@ -393,9 +419,13 @@ footer{color:#cbb98a;background:#0d1033;padding-top:20px}
       <div class="titulo rv sube d1">Playlist del baile</div>
       <svg class="adorno" viewBox="0 0 220 22"><path d="M0 11h85M135 11h85" stroke="#b08a3e" stroke-width="1"/><path d="M110 2l9 9-9 9-9-9z" fill="none" stroke="#b08a3e"/><circle cx="110" cy="11" r="2.5" fill="#8b0f1a"/></svg>
       <p class="texto rv sube d2">¿Qué canción no puede faltar en la pista? Ayúdame a armar la música de mi gran noche.</p>
-      <div style="margin-top:20px" class="rv zoom d3">
-        <a class="btn" id="btnPlaylist" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>Sugerir canción</a>
-      </div>
+      <form class="formu" id="fCancion" autocomplete="off">
+        <input name="cancion" maxlength="150" placeholder="Nombre de la canción" required>
+        <input name="artista" maxlength="120" placeholder="Artista">
+        <input name="nombre" maxlength="120" placeholder="Tu nombre">
+        <button class="btn" type="submit"><svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>Enviar canción</button>
+        <p class="aviso" id="avCancion"></p>
+      </form>
     </div>
   </section>
 
@@ -406,9 +436,19 @@ footer{color:#cbb98a;background:#0d1033;padding-top:20px}
       <div class="titulo rv sube d1">Confirma tu asistencia</div>
       <svg class="adorno" viewBox="0 0 220 22"><path d="M0 11h85M135 11h85" stroke="#b08a3e" stroke-width="1"/><path d="M110 2l9 9-9 9-9-9z" fill="none" stroke="#b08a3e"/><circle cx="110" cy="11" r="2.5" fill="#8b0f1a"/></svg>
       <p class="texto rv sube d2">Tu presencia hará de esta noche un cuento inolvidable. Por favor confírmanos tu asistencia.</p>
-      <div style="margin-top:20px" class="rv zoom d3">
-        <a class="btn" id="btnConfirmar" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.2 1.4z"/></svg>Confirmar</a>
-      </div>
+      <form class="formu" id="fRsvp" autocomplete="off">
+        <input name="nombre" maxlength="120" placeholder="Nombre y apellido" required>
+        <div class="opciones">
+          <label><input type="radio" name="asiste" value="si" checked><span>Sí, asistiré</span></label>
+          <label><input type="radio" name="asiste" value="no"><span>No podré ir</span></label>
+        </div>
+        <label class="cuantos" id="cuantos">¿Cuántas personas asistirán?
+          <select name="personas" id="selPersonas"></select>
+        </label>
+        <textarea name="mensaje" maxlength="500" rows="2" placeholder="Mensaje para Angelica (opcional)"></textarea>
+        <button class="btn" type="submit"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Confirmar</button>
+        <p class="aviso" id="avRsvp"></p>
+      </form>
     </div>
   </section>
 
@@ -451,18 +491,53 @@ footer{color:#cbb98a;background:#0d1033;padding-top:20px}
   const wa = t => "https://wa.me/"+C.whatsapp+"?text="+encodeURIComponent(t);
   const nombre1 = (C.nombre||"").split(" ")[0];
 
-  // ---- pase personal ----
+  // ---- pase personal (?p=Puestos) ----
   const ps = new URLSearchParams(location.search);
-  const invitado = (ps.get("n")||"").trim(), puestos = parseInt(ps.get("p"),10);
-  if(invitado || puestos>0){
+  const puestos = Math.min(20, parseInt(ps.get("p"),10) || 0);
+  if(puestos>0){
     q("#pase").classList.add("ver");
-    q("#paseNombre").textContent = invitado || "";
     q("#paseTexto").textContent = "Hemos reservado para ti";
-    if(puestos>0){ q("#paseNum").textContent = puestos; q("#paseLbl").textContent = puestos===1?"puesto":"puestos"; }
+    q("#paseNum").textContent = puestos; q("#paseLbl").textContent = puestos===1?"puesto":"puestos";
   }
-  const quien = invitado ? " Soy "+invitado+"." : "";
-  q("#btnConfirmar").href = wa("¡Hola! Confirmo mi asistencia a los XV años de "+nombre1+"."+quien+(puestos>0?" ("+puestos+" "+(puestos===1?"puesto":"puestos")+")":""));
-  q("#btnPlaylist").href = wa("¡Hola! Para la playlist de los XV de "+nombre1+" sugiero la canción: ");
+
+  // ---- confirmación y canciones ----
+  const SCRIPT = String(C.scriptUrl||"").trim();
+  const sel = q("#selPersonas"), tope = puestos || 5;
+  for(let i=1;i<=tope;i++){ const o=document.createElement("option"); o.value=i; o.textContent=i+(i===1?" persona":" personas"); sel.appendChild(o); }
+  sel.value = tope;
+  const fR = q("#fRsvp"), fC = q("#fCancion");
+  fR.addEventListener("change",()=>{ q("#cuantos").style.display = fR.asiste.value==="si" ? "" : "none"; });
+  async function enviar(datos){
+    const r = await fetch(SCRIPT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(datos)});
+    const j = await r.json(); if(!j.ok) throw new Error(j.error||"error"); return j;
+  }
+  function aviso(el,txt,err){ el.textContent=txt; el.classList.toggle("error",!!err); }
+  fR.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const d={action:"rsvp",nombre:fR.nombre.value.trim(),asiste:fR.asiste.value,personas:fR.asiste.value==="si"?Number(sel.value):0,puestos:puestos||"",mensaje:fR.mensaje.value.trim()};
+    if(!d.nombre) return;
+    if(!fC.nombre.value) fC.nombre.value=d.nombre;
+    if(!SCRIPT){ // sin conexión a la hoja: se envía por WhatsApp
+      const t = d.asiste==="si" ? "¡Hola! Confirmo mi asistencia a los XV años de "+nombre1+". Soy "+d.nombre+" ("+d.personas+(d.personas===1?" persona":" personas")+")." : "Hola, soy "+d.nombre+". Lamentablemente no podré asistir a los XV de "+nombre1+".";
+      open(wa(t+(d.mensaje?" "+d.mensaje:"")),"_blank"); return;
+    }
+    const b=fR.querySelector("button"); b.disabled=true; aviso(q("#avRsvp"),"Enviando…");
+    try{ await enviar(d);
+      const n1=d.nombre.split(" ")[0];
+      aviso(q("#avRsvp"), d.asiste==="si" ? "¡Gracias, "+n1+"! Tu asistencia quedó confirmada ✨" : "Gracias por avisarnos, "+n1+". ¡Te extrañaremos!");
+    }catch(err){ aviso(q("#avRsvp"),"No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.",true); }
+    b.disabled=false;
+  });
+  fC.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const d={action:"cancion",cancion:fC.cancion.value.trim(),artista:fC.artista.value.trim(),nombre:fC.nombre.value.trim()};
+    if(!d.cancion) return;
+    if(!SCRIPT){ open(wa("¡Hola! Para la playlist de los XV de "+nombre1+" sugiero: "+d.cancion+(d.artista?" – "+d.artista:"")),"_blank"); return; }
+    const b=fC.querySelector("button"); b.disabled=true; aviso(q("#avCancion"),"Enviando…");
+    try{ await enviar(d); aviso(q("#avCancion"),"¡Gracias! «"+d.cancion+"» ya está en la playlist 🎶"); fC.cancion.value=""; fC.artista.value=""; }
+    catch(err){ aviso(q("#avCancion"),"No se pudo enviar. Inténtalo de nuevo.",true); }
+    b.disabled=false;
+  });
 
   // ---- música ----
   const audio = q("#audio"), btnM = q("#musica"), rep = q("#reproductor");
